@@ -1,0 +1,53 @@
+{
+	"title": "Example Schema",
+	"description": "This schema is awesome.",
+	"type": "object",
+	"properties": {
+		"product": {
+			"description": "The product.",
+			"type": "object",
+			"properties": {
+				"volume": {
+					"type": "number",
+					"description": "Volume of the product"
+				},
+				"description": {
+					"description": "description of the product",
+					"type": "string"
+				},
+				"moreProps": {
+					"type": "object",
+					"description": "Nested Properties.",
+					"properties": {
+						"moreProps": {
+							"type": "object",
+							"description": "Nested Properties.",
+							"properties": {
+								"moreProps": {
+									"type": "object",
+									"description": "Nested Properties.",
+									"properties": {
+										"moreProps": {
+											"type": "object",
+											"description": "Nested Properties.",
+											"properties": {
+												"description": {
+													"description": "description of the product",
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"price": {
+			"description": "Cost of the product.",
+			"type": "number"
+		}
+	}
+}

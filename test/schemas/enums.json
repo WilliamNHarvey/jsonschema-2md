@@ -1,0 +1,50 @@
+{
+	"title": "Example Schema",
+	"description": "This schema is awesome.",
+	"type": "object",
+	"properties": {
+		"product": {
+			"description": "The product.",
+			"type": "object",
+			"properties": {
+				"moreProps": {
+					"type": "object",
+					"description": "Nested Properties.",
+					"properties": {
+						"moreProps": {
+							"type": "object",
+							"description": "Nested Properties.",
+							"properties": {
+								"moreProps": {
+									"type": "object",
+									"description": "Nested Properties.",
+									"properties": {
+										"moreProps": {
+											"type": "object",
+											"description": "Nested Properties.",
+											"properties": {
+												"description": {
+													"description": "description of the product",
+													"type": "string",
+													"enum": [
+														"A",
+														"B",
+														"C"
+													]
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"price": {
+			"description": "Cost of the product.",
+			"type": "number"
+		}
+	}
+}

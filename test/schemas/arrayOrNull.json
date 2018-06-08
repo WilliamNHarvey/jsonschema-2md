@@ -1,0 +1,37 @@
+{
+	"title": "Example Schema",
+	"description": "This schema is awesome.",
+	"type": "object",
+	"properties": {
+		"product": {
+			"description": "The product.",
+			"type": "object",
+			"properties": {
+				"moreProps": {
+					"type": [
+						"array",
+						"null"
+					],
+					"description": "Array of different types",
+					"items": {
+						"type": "object",
+						"properties": {
+							"loc": {
+								"type": "string"
+							},
+							"toll": {
+								"type": ["string", "null"]
+							},
+							"message": {
+								"type": ["string", "null"]
+							}
+						},
+						"required": [
+							"loc"
+						]
+					}
+				}
+			}
+		}
+	}
+}

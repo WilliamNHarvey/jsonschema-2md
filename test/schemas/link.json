@@ -1,0 +1,11 @@
+{
+	"title": "Lined Schema",
+	"description": "This schema is awesome. represntes MyBu",
+	"type": "object",
+	"properties": {
+		"bu": {
+			"$ref": "defs.json#/bu",
+			"description": "BU"
+		}
+	}
+}
