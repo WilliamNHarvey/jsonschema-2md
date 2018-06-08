@@ -1,4 +1,4 @@
-# json-schema-to-markdown
+# jsonschema-2md
 
 This module turns a [JSON Schema](http://json-schema.org/) into a
 human-readable markdown file.
@@ -10,12 +10,12 @@ are also very welcome.
 
 # using
 
-Install the normal way: `npm install json-schema-2-md`
+Install the normal way: `npm install jsonschema-2md`
 
 Use it like this:
 
 ```js
-var parse = require('json-schema-to-markdown')
+var parse = require('jsonschema-2md');
 var schema = // An object that is a valid JSON Schema
 var markdown = parse(schema)
 ```
@@ -49,7 +49,7 @@ This schema is awesome.
 
 The schema defines the following properties:
 
-## `price` (number)
+  - `price` (number)
 
 Cost of the product.
 ```
