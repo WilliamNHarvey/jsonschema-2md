@@ -1,4 +1,4 @@
-# jsonschema-2md
+# jsonschema-2md-withheaders
 
 This module turns a [JSON Schema](http://json-schema.org/) into a
 human-readable markdown file.
@@ -10,12 +10,12 @@ are also very welcome.
 
 # using
 
-Install the normal way: `npm install jsonschema-2md`
+Install the normal way: `npm install jsonschema-2md-withheaders`
 
 Use it like this:
 
 ```js
-var parse = require('jsonschema-2md');
+var parse = require('jsonschema-2md-withheaders');
 var schema = // An object that is a valid JSON Schema
 var markdown = parse(schema)
 ```

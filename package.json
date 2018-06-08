@@ -1,26 +1,26 @@
 {
-  "_from": "jsonschema-2md@0.1.4",
-  "_id": "jsonschema-2md@0.1.4",
+  "_from": "jsonschema-2md-withheaders@0.1.5",
+  "_id": "jsonschema-2md-withheaders@0.1.5",
   "_inBundle": false,
   "_integrity": "sha512-3a+G+a5oSkPlhv4siiuAsT9LJT+eY+2GC8kafkl8Kni5Srnk46RoPshk0q3kxmh95BMo2/6oAsRLa+yCnjprnA==",
-  "_location": "/jsonschema-2md",
+  "_location": "/jsonschema-2md-withheaders",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "jsonschema-2md@0.1.4",
-    "name": "jsonschema-2md",
-    "escapedName": "jsonschema-2md",
-    "rawSpec": "0.1.4",
+    "raw": "json-schema-2-markdown@0.1.5",
+    "name": "json-schema-2-markdown",
+    "escapedName": "json-schema-2-markdown",
+    "rawSpec": "0.1.5",
     "saveSpec": null,
-    "fetchSpec": "0.1.4"
+    "fetchSpec": "0.1.5"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/json-schema-2-md/-/json-schema-2-md-0.1.4.tgz",
   "_shasum": "1492776c16ed43a85cf074732f8f04b6a7d52f1b",
-  "_spec": "jsonschema-2md@0.1.4",
+  "_spec": "jsonschema-2md-withheaders@0.1.5",
   "_where": "/Users/doximity/Documents/repos/dox-analytics",
   "author": {
     "name": "roeeyud"
@@ -45,7 +45,7 @@
   ],
   "license": "VOL",
   "main": "index.js",
-  "name": "jsonschema-2md",
+  "name": "jsonschema-2md-withheaders",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WilliamNHarvey/jsonschema-2md.git"
