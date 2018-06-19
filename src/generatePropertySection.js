@@ -25,7 +25,7 @@ function generatePropertySection(depth, schema, subSchemas) {
                 const prefix = getPrefixByDepth(depth);
                 return generateSchemaSectionText(depth + 1, `${prefix}- `, propertyKey, propertyIsRequired, schema.properties[propertyKey], subSchemas);
             }),
-            ['### This property must be one of the following types:', oneOfList]
+            [getPrefixByDepth(depth) + '### This property must be one of the following types:', oneOfList]
         ];
         return res;
     } else if (schema.properties) {
@@ -36,7 +36,7 @@ function generatePropertySection(depth, schema, subSchemas) {
         });
     } else if (schema.oneOf) {
         const oneOfList = schema.oneOf.map(innerSchema => `* \`${getActualType(innerSchema, subSchemas)}\``).join('\n');
-        return ['### This property must be one of the following types:', oneOfList];
+        return [getPrefixByDepth(depth) + '### This property must be one of the following types:', oneOfList];
     }
     return [];
 }
@@ -66,23 +66,23 @@ function generateSchemaSectionText(
         }
 
         if (itemsType && name) {
-            text.push(`#### The object is an array with all elements of the type \`${itemsType}\`.`);
+            text.push(getPrefixByDepth(depth + 1) + `#### The object is an array with all elements of the type \`${itemsType}\`.`);
         } else if (itemsType) {
-            text.push(`#### The schema defines an array with all elements of the type \`${itemsType}\`.`);
+            text.push(getPrefixByDepth(depth + 1) + `#### The schema defines an array with all elements of the type \`${itemsType}\`.`);
         } else {
             let validationItems = [];
             const items = schema.items || {};
             if (items.allOf) {
-                text.push('#### The elements of the array must match *all* of the following properties:');
+                text.push(getPrefixByDepth(depth + 1) + '#### The elements of the array must match *all* of the following properties:');
                 validationItems = schema.items.allOf;
             } else if (items.anyOf) {
-                text.push('#### The elements of the array must match *at least one* of the following properties:');
+                text.push(getPrefixByDepth(depth + 1) + '#### The elements of the array must match *at least one* of the following properties:');
                 validationItems = schema.items.anyOf;
             } else if (items.oneOf) {
-                text.push('#### The elements of the array must match *exactly one* of the following properties:');
+                text.push(getPrefixByDepth(depth + 1) + '#### The elements of the array must match *exactly one* of the following properties:');
                 validationItems = schema.items.oneOf;
             } else if (items.not) {
-                text.push('#### The elements of the array must *not* match the following properties:');
+                text.push(getPrefixByDepth(depth + 1) + '#### The elements of the array must *not* match the following properties:');
                 validationItems = schema.items.not;
             }
 
@@ -98,13 +98,13 @@ function generateSchemaSectionText(
         }
 
         if (itemsType === 'object') {
-            text.push('#### The array object has the following properties:');
+            text.push(getPrefixByDepth(depth + 1) + '#### The array object has the following properties:');
             generatePropertySection(depth + 1, schema.items, subSchemas).forEach((section) => {
                 text = text.concat(section);
             });
         }
     } else if (schema.oneOf) {
-        text.push('#### The object must be one of the following types:');
+        text.push(getPrefixByDepth(depth + 1) + '#### The object must be one of the following types:');
         text.push(schema.oneOf.map(oneOf => `* \`${subSchemas[oneOf.$ref]}\``).join('\n'));
     }
 
@@ -115,9 +115,9 @@ function generateSchemaSectionText(
 
     if (schema.default !== undefined) {
         if (schema.default === null || ['boolean', 'number', 'string'].indexOf(typeof schema.default) !== -1) {
-            text.push(`#### Default: \`${JSON.stringify(schema.default)}\``);
+            text.push(getPrefixByDepth(depth + 1) + `#### Default: \`${JSON.stringify(schema.default)}\``);
         } else {
-            text.push('#### Default:');
+            text.push(getPrefixByDepth(depth + 1) + '#### Default:');
             text.push(`\`\`\`\n${JSON.stringify(schema.default, null, 2)}\n\`\`\``);
         }
     }
@@ -125,7 +125,7 @@ function generateSchemaSectionText(
     const restrictions = generatePropertyRestrictions(schema);
 
     if (restrictions) {
-        text.push('#### Additional restrictions:');
+        text.push(getPrefixByDepth(depth + 1) + '#### Additional restrictions:');
         text.push(restrictions);
     }
 
