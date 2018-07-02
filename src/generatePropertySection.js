@@ -126,7 +126,7 @@ function generateSchemaSectionText(
 
     if (restrictions) {
         text.push(getPrefixByDepth(depth + 1) + '#### Additional restrictions:');
-        text.push(restrictions);
+        text.push(getPrefixByDepth(depth + 1) + restrictions);
     }
 
     return text;
